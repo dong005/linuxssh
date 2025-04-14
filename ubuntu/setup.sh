@@ -14,12 +14,12 @@ CURRENT_USER=$(logname || whoami)
 echo "当前用户: $CURRENT_USER"
 
 # 公钥文件路径
-PUBLIC_KEY_FILE="$(dirname "$0")/id_ed25519.pub"
+PUBLIC_KEY_FILE="$(dirname "$0")/authorized_keys"
 
 # 检查公钥文件是否存在
 if [ ! -f "$PUBLIC_KEY_FILE" ]; then
     echo "错误: 公钥文件 '$PUBLIC_KEY_FILE' 不存在"
-    echo "请确保id_ed25519.pub文件与脚本在同一目录"
+    echo "请确保authorized_keys文件与脚本在同一目录"
     exit 1
 fi
 
